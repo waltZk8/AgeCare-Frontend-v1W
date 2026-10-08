@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Jardín ilustrado de ejemplo">
+  <rect width="640" height="420" fill="#e9efff"/><circle cx="520" cy="85" r="44" fill="#ffd447"/>
+  <path d="M0 240Q150 135 320 240T640 210V420H0" fill="#c9ddd0"/><path d="M0 310Q160 230 340 295T640 275V420H0" fill="#9fc5ac"/>
+  <path d="M260 420Q230 290 315 240Q330 260 325 290Q288 330 340 420" fill="#fff8de"/>
+  <g stroke="#43845f" stroke-width="9"><path d="M120 360V245M465 357V232M540 385V300"/></g>
+  <g fill="#ad98f0"><circle cx="120" cy="240" r="30"/><circle cx="96" cy="263" r="25"/><circle cx="144" cy="263" r="25"/></g>
+  <g fill="#4a5ed1"><circle cx="465" cy="218" r="30"/><circle cx="440" cy="242" r="25"/><circle cx="490" cy="242" r="25"/></g>
+  <g fill="#fff1a8"><circle cx="540" cy="280" r="25"/><circle cx="519" cy="302" r="21"/><circle cx="561" cy="302" r="21"/></g>
+  <g fill="#ffd447"><circle cx="120" cy="259" r="15"/><circle cx="465" cy="238" r="15"/><circle cx="540" cy="299" r="13"/></g>
+  <rect x="20" y="20" width="205" height="38" rx="19" fill="#fffdf5"/><text x="122" y="45" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#23395d">Imagen de ejemplo</text>
+</svg>
