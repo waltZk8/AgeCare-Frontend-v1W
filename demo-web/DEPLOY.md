@@ -9,7 +9,7 @@
 
 1. Importa `waltZk8/AgeCare-Frontend-v1W` desde Vercel con la cuenta de GitHub que tenga acceso al repositorio.
 2. Selecciona `demo-web` como **Root Directory** y `Other` como **Framework Preset**. No configures comandos de build ni variables de entorno para esta demo estática.
-3. `main` aún no contiene `demo-web/`, así que el primer despliegue de la importación puede fallar. Una vez creado el proyecto, abre **Deployments → Create Deployment** y selecciona la rama `feat/mvp-vercel-20261009` (o el commit `11c376a663a78908618aaae078f4e5179f3ee400`). Confirma que se genera una **Preview Deployment**; abre la URL que Vercel entregue.
+3. Si importas antes de fusionar la PR, `main` aún no contiene `demo-web/` y el primer despliegue puede fallar. En ese caso, abre **Deployments → Create Deployment** y selecciona la rama `feat/mvp-vercel-20261009`. Cuando la PR esté fusionada, comprueba el despliegue generado desde `main`. Abre la URL que Vercel entregue.
 4. Comprueba en móvil y escritorio: cuatro accesos, logo, chat Familia–Cuidador, Consultas del marketplace, calendario, ajustes, imágenes y audio. Ejecuta las pruebas locales con `node --test`.
 5. Para actualizar la URL de producción en Vercel, revisa y fusiona la solicitud de cambios a `main` cuando la empresa apruebe la demo. No ejecutes `vercel --prod` para una vista previa.
 
@@ -20,4 +20,5 @@ Una vez conectado el repositorio, Vercel puede crear despliegues por cada nuevo 
 Codemagic debe tomar el proyecto Flutter de la **raíz** del mismo repositorio de frontend. Su compilación automática depende de configurar un workflow y sus eventos de disparo; agregar `demo-web/` por sí solo no crea una aplicación móvil compilada.
 
 Render puede alojar el repositorio FastAPI independiente cuando estén listos la base de datos, las variables de entorno y los endpoints reales de sesión. El backend existente todavía no implementa login, refresh ni logout reales. No es necesario para compartir la demo Vercel, que usa datos ficticios locales.
+
 
