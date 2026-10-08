@@ -1,0 +1,12 @@
+{
+  "name": "agecare-demo-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MVP demostrativo AgeCare con datos ficticios y sin servicios externos.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
