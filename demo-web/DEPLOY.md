@@ -20,5 +20,3 @@ Una vez conectado el repositorio, Vercel puede crear despliegues por cada nuevo 
 Codemagic debe tomar el proyecto Flutter de la **raíz** del mismo repositorio de frontend. Su compilación automática depende de configurar un workflow y sus eventos de disparo; agregar `demo-web/` por sí solo no crea una aplicación móvil compilada.
 
 Render puede alojar el repositorio FastAPI independiente cuando estén listos la base de datos, las variables de entorno y los endpoints reales de sesión. El backend existente todavía no implementa login, refresh ni logout reales. No es necesario para compartir la demo Vercel, que usa datos ficticios locales.
-
-

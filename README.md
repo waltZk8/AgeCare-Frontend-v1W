@@ -91,4 +91,3 @@ AGE-201 del Plan de Desarrollo).
 - **Tema**: los colores viven en `AppColors` con los mismos nombres de
   token que el Anexo A de la Guía de Diseño (`teal600`, `navy800`, ...),
   para que un cambio de paleta futuro sea un solo archivo.
-
