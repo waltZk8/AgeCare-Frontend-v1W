@@ -1,5 +1,18 @@
 # AgeCare — Frontend Flutter (auth + patients)
 
+## Demo web para Vercel
+
+La demostración web del MVP está en [`demo-web/`](demo-web/). Es un sitio estático
+con datos ficticios y acceso simulado para Familia, Cuidador, Médico y Adulto
+mayor. Incluye el logo oficial, conversación Familia–Cuidador, marketplace,
+agenda y preferencias. Para Vercel configura **Root Directory** como
+`demo-web` y **Framework Preset** como `Other`. Las instrucciones de despliegue
+están en [`demo-web/DEPLOY.md`](demo-web/DEPLOY.md).
+
+El proyecto Flutter de esta raíz es independiente de la demo web y corresponde
+a Codemagic. La demo web no se conecta al backend FastAPI ni sincroniza datos
+entre dispositivos.
+
 Este entregable implementa la arquitectura feature-first pedida, alineada
 1:1 con el backend FastAPI adjunto (`app/features/auth`, `app/features/patients`).
 
@@ -78,3 +91,4 @@ AGE-201 del Plan de Desarrollo).
 - **Tema**: los colores viven en `AppColors` con los mismos nombres de
   token que el Anexo A de la Guía de Diseño (`teal600`, `navy800`, ...),
   para que un cambio de paleta futuro sea un solo archivo.
+
