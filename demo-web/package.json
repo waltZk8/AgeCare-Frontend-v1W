@@ -1,8 +1,8 @@
 {
-  "name": "agecare-demo-vercel",
+  "name": "agecare-mvp-vercel",
   "version": "1.0.0",
   "private": true,
-  "description": "MVP demostrativo AgeCare con datos ficticios y sin servicios externos.",
+  "description": "MVP de prueba AgeCare con datos ficticios y sin servicios externos.",
   "scripts": {
     "test": "node --test"
   },

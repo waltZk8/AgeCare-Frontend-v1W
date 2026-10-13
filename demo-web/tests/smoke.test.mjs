@@ -8,15 +8,17 @@ const html = await readFile(new URL('index.html', root), 'utf8');
 const script = await readFile(new URL('app.js', root), 'utf8');
 const style = await readFile(new URL('styles.css', root), 'utf8');
 const vercel = JSON.parse(await readFile(new URL('vercel.json', root), 'utf8'));
-const featureScript = await readFile(new URL('demo-features.js', root), 'utf8');
-const authScript = await readFile(new URL('demo-auth.js', root), 'utf8');
+const featureScript = await readFile(new URL('mvp-features.js', root), 'utf8');
+const authScript = await readFile(new URL('mvp-auth.js', root), 'utf8');
+const accessibilityScript = await readFile(new URL('mvp-accessibility.js', root), 'utf8');
+const accessibilityStyle = await readFile(new URL('visual-accessibility.css', root), 'utf8');
 
 test('incluye entrada, cuatro perfiles, navegación y notificaciones', () => {
   for (const expected of [
     'enter', 'Familia', 'Cuidador', 'Médico', 'Adulto mayor',
     'notifications-button', 'notification-panel',
   ]) assert.ok(html.includes(expected), `falta ${expected}`);
-  assert.ok(html.includes('src="assets/welcome-image.png"'));
+  assert.ok(html.includes('src="assets/agecare-logo-transparente.png"'));
   assert.ok(html.includes('alt="AgeCare"'));
 });
 
@@ -56,16 +58,20 @@ test('no contiene endpoints ni recursos web externos', () => {
   assert.doesNotMatch(html, /https?:\/\//);
   assert.doesNotMatch(script, /fetch\s*\(|XMLHttpRequest|WebSocket|https?:\/\//);
   assert.doesNotMatch(style, /url\s*\(\s*["']?https?:\/\//);
-  assert.doesNotMatch(featureScript + authScript, /fetch\s*\(|XMLHttpRequest|WebSocket|https?:\/\//);
+  assert.doesNotMatch(featureScript + authScript + accessibilityScript, /fetch\s*\(|XMLHttpRequest|WebSocket|https?:\/\//);
+  assert.doesNotMatch(accessibilityStyle, /url\s*\(\s*["']?https?:\/\//);
 });
 
 test('el logo oficial se conserva byte a byte y los adjuntos son locales', async () => {
   const logo = await readFile(new URL('assets/agecare-logo-oficial.jpeg',root));
   assert.equal(createHash('sha256').update(logo).digest('hex'), 'cb178bcd3d959286ef0599ad1190c16106e4448a011f017f181bfae0daeb0d9d');
   assert.doesNotMatch(html, /brand-mark/);
-  assert.match(html, /class="app-logo" src="assets\/agecare-logo-oficial.jpeg"/);
-  await access(new URL('assets/demo-photo.svg',root));
-  const audio = await readFile(new URL('assets/demo-audio.wav',root));
+  assert.match(html, /class="app-logo" src="assets\/agecare-logo-transparente.png"/);
+  const transparent = await readFile(new URL('assets/agecare-logo-transparente.png',root));
+  assert.equal(transparent.toString('ascii',1,4), 'PNG');
+  assert.equal(transparent[25], 6, 'PNG con canal alfa');
+  await access(new URL('assets/mvp-photo.svg',root));
+  const audio = await readFile(new URL('assets/mvp-audio.wav',root));
   assert.equal(audio.toString('ascii',0,4),'RIFF');
   assert.equal(audio.toString('ascii',8,12),'WAVE');
 });
