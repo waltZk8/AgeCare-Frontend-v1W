@@ -23,7 +23,13 @@ const AgeCareFeatures = (() => {
     return calendarCells(year, month - 1).includes(value);
   }
   function preferences(value = {}) {
-    return { theme: ['light', 'dark'].includes(value?.theme) ? value.theme : 'light', size: ['standard', 'comfortable', 'large'].includes(value?.size) ? value.size : 'standard' };
+    return {
+      theme: ['light', 'dark'].includes(value?.theme) ? value.theme : 'light',
+      size: ['standard', 'comfortable', 'large', 'extra'].includes(value?.size) ? value.size : 'standard',
+      contrast: value?.contrast === true,
+      reducedMotion: value?.reducedMotion === true,
+      spacing: value?.spacing === true,
+    };
   }
   function formatDate(value) {
     if (!validDate(value)) return 'Fecha no válida';

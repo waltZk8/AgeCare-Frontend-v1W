@@ -1,22 +1,20 @@
-# Publicación de la demo AgeCare
+# Despliegue del MVP AgeCare
 
-## Repositorios
+## Vercel
 
-- Frontend existente: `waltZk8/AgeCare-Frontend-v1W`. Flutter permanece en la raíz. Esta demo está en `demo-web/`.
-- Backend existente: `waltZk8/Backend-AgeCareW`. Es FastAPI y se mantiene separado. La demo web no lo consulta.
+Repositorio: waltZk8/AgeCare-Frontend-v1W.
 
-## Vista previa en Vercel
+- Root Directory: `demo-web` (ruta existente conservada por compatibilidad).
+- Framework Preset: Other.
+- Sin comando de compilación ni variables de backend para esta versión local.
+- Rama de esta revisión: `feat/mvp-local-mejorado-20261013`.
 
-1. Importa `waltZk8/AgeCare-Frontend-v1W` desde Vercel con la cuenta de GitHub que tenga acceso al repositorio.
-2. Selecciona `demo-web` como **Root Directory** y `Other` como **Framework Preset**. No configures comandos de build ni variables de entorno para esta demo estática.
-3. Si importas antes de fusionar la PR, `main` aún no contiene `demo-web/` y el primer despliegue puede fallar. En ese caso, abre **Deployments → Create Deployment** y selecciona la rama `feat/mvp-vercel-20261009`. Cuando la PR esté fusionada, comprueba el despliegue generado desde `main`. Abre la URL que Vercel entregue.
-4. Comprueba en móvil y escritorio: cuatro accesos, logo, chat Familia–Cuidador, Consultas del marketplace, calendario, ajustes, imágenes y audio. Ejecuta las pruebas locales con `node --test`.
-5. Para actualizar la URL de producción en Vercel, revisa y fusiona la solicitud de cambios a `main` cuando la empresa apruebe la demo. No ejecutes `vercel --prod` para una vista previa.
+La revisión se sube a una rama y se propone mediante pull request. Si la integración Git está habilitada, Vercel puede generar un Preview para esa rama. Comprobar en el panel la rama, el commit y el resultado del despliegue antes de compartirlo. La URL de producción permanece en su versión previa mientras no se fusione y despliegue la revisión en la rama configurada para producción.
 
-Una vez conectado el repositorio, Vercel puede crear despliegues por cada nuevo push a la rama. La URL Preview pertenece al despliegue generado; verifica la URL actual en el panel de Vercel tras cada push.
+## Alcance
 
-## Flutter, Codemagic y backend
+Este MVP web guarda datos ficticios en el navegador y ofrece un asistente local guiado. No consume FastAPI ni NVIDIA. Actualizar esta interfaz no conecta automáticamente PostgreSQL o la IA.
 
-Codemagic debe tomar el proyecto Flutter de la **raíz** del mismo repositorio de frontend. Su compilación automática depende de configurar un workflow y sus eventos de disparo; agregar `demo-web/` por sí solo no crea una aplicación móvil compilada.
+Flutter sigue en la raíz del repositorio. Las mejoras de HTML/CSS/JavaScript no se transfieren automáticamente a una APK Flutter de Codemagic. El proyecto Android conectado preparado localmente es otro incremento que requiere revisión e integración posteriores.
 
-Render puede alojar el repositorio FastAPI independiente cuando estén listos la base de datos, las variables de entorno y los endpoints reales de sesión. El backend existente todavía no implementa login, refresh ni logout reales. No es necesario para compartir la demo Vercel, que usa datos ficticios locales.
+La carpeta usa el nombre de despliegue histórico `demo-web`; los archivos de aplicación y los textos visibles usan MVP.

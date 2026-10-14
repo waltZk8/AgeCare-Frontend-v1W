@@ -1,16 +1,16 @@
 # AgeCare — Frontend Flutter (auth + patients)
 
-## Demo web para Vercel
+## MVP web para Vercel
 
-La demostración web del MVP está en [`demo-web/`](demo-web/). Es un sitio estático
+La interfaz web del MVP está en [`demo-web/`](demo-web/). Es un sitio estático
 con datos ficticios y acceso simulado para Familia, Cuidador, Médico y Adulto
 mayor. Incluye el logo oficial, conversación Familia–Cuidador, marketplace,
-agenda y preferencias. Para Vercel configura **Root Directory** como
+agenda, Salud editable para Familia y Médico, siete accesos de cuidadoras, juegos variados y asistente local guiado. La IA generativa todavía no está conectada. Para Vercel configura **Root Directory** como
 `demo-web` y **Framework Preset** como `Other`. Las instrucciones de despliegue
 están en [`demo-web/DEPLOY.md`](demo-web/DEPLOY.md).
 
-El proyecto Flutter de esta raíz es independiente de la demo web y corresponde
-a Codemagic. La demo web no se conecta al backend FastAPI ni sincroniza datos
+El proyecto Flutter de esta raíz es independiente del MVP web y corresponde
+a Codemagic. El MVP web no se conecta al backend FastAPI ni sincroniza datos
 entre dispositivos.
 
 Este entregable implementa la arquitectura feature-first pedida, alineada
